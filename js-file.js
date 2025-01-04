@@ -33,7 +33,6 @@ function operate(operator, a, b) {
 }
 
 let currentResult = null;
-let result = null;
 let operator = null;
 let currentInput = "";
 
@@ -56,9 +55,9 @@ document.querySelectorAll("button").forEach(button => {
 });
 
 function handleNumber(value) {
-    if (operator === null) {
-        if (result !== null) {
-        result = null;
+    if (!operator) {
+        if (currentResult) {
+        currentResult = null;
         }
     }
     currentInput += value;
@@ -66,36 +65,38 @@ function handleNumber(value) {
 }
 
 function handleOperator(op) {
+
     if (currentInput === "") {
-        if (result !== null) {
-            operator = op;
-        }
-        return;
-    }
-
-    if (currentResult === null) {
+        if (operator && currentResult) {
+            return;
+        } else if (!operator && !currentResult) {
+            currentResult = 0;
+        }  
+    } else if (!currentResult) {
         currentResult = parseFloat(currentInput);
-    } else if (operator) {
+    } else {
         currentResult = operate(operator, currentResult, parseFloat(currentInput));
-        updateDisplay(currentResult); 
-    }
-
+        updateDisplay(currentResult);
+    } 
+    
     operator = op; 
-    currentInput = ""; 
+    currentInput = "";
 }
 
 function handleEquals() {
-    if (operator && currentInput !== "") { 
-        if (result === null) {
-            result = operate(operator, currentResult, parseFloat(currentInput));
-        } else {
-            result = operate(operator, result, parseFloat(currentInput));
+
+        if (currentInput === "") {
+            return;
+        } 
+        
+        if (currentResult) {
+            currentResult = operate(operator, currentResult, parseFloat(currentInput));
+            updateDisplay(currentResult); 
+            operator = null;  
+            currentInput = ""; 
         }
-        updateDisplay(result);  
-        operator = null;  
-        currentInput = "";
-        currentResult = null;
-    }
+        
+          
 }
 
 function updateDisplay(value) {
