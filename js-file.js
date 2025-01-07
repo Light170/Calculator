@@ -69,9 +69,11 @@ function handleNumber(value) {
         }
     }
     
+    const MAX_DIGITS = 10;
+    
     if (currentInput === "0") {
     currentInput = value;
-    } else {
+    } else if (currentInput.length < MAX_DIGITS) {
         currentInput += value;
     }
 
@@ -90,9 +92,24 @@ function handleOperator(op) {
         currentResult = parseFloat(currentInput);
     } else {
         currentResult = operate(operator, currentResult, parseFloat(currentInput));
-        updateDisplay(currentResult);
+        
+        let numStr = currentResult.toString();
+
+        if (numStr.length > 10) {
+            let integerPart = numStr.split('.')[0]; 
+            let decimalPart = numStr.split('.')[1] || ''; 
+
+            if (integerPart.length >= 10) {
+                numStr = integerPart.slice(0, 10); 
+            } else {
+                decimalPart = decimalPart.slice(0, 10 - integerPart.length - 1); 
+                numStr = `${integerPart}.${decimalPart}`;
+            }
+        currentResult = parseFloat(numStr);
+        }
     } 
     
+    updateDisplay(currentResult);
     operator = op; 
     currentInput = "";
 }
@@ -104,10 +121,26 @@ function handleEquals() {
         
         if (currentResult) {
             currentResult = operate(operator, currentResult, parseFloat(currentInput));
-            updateDisplay(currentResult); 
+            
+            let numStr = currentResult.toString();
+
+            if (numStr.length > 10) {
+                let integerPart = numStr.split('.')[0]; 
+                let decimalPart = numStr.split('.')[1] || ''; 
+
+                if (integerPart.length >= 10) {
+                    numStr = integerPart.slice(0, 10); 
+                } else {
+                decimalPart = decimalPart.slice(0, 10 - integerPart.length - 1); 
+                numStr = `${integerPart}.${decimalPart}`;
+                }
+                currentResult = parseFloat(numStr);
+            }
+            
+            updateDisplay(currentResult);
             operator = null;  
             currentInput = ""; 
-        }   
+        } 
 }
 
 function clearAll() {
@@ -123,7 +156,7 @@ function handleDecimal() {
             currentResult = null;
         }
         currentInput = "0.";
-    } else if (!currentInput.includes(".")) {
+    } else if (!currentInput.includes(".") && currentInput <= 9) {
         currentInput += ".";
     }
 
