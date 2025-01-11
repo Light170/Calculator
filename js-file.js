@@ -105,16 +105,7 @@ function handleOperator(op) {
         let numStr = currentResult.toString();
 
         if (numStr.length > 10) {
-            let integerPart = numStr.split('.')[0]; 
-            let decimalPart = numStr.split('.')[1] || ''; 
-
-            if (integerPart.length >= 10) {
-                numStr = integerPart.slice(0, 10); 
-            } else {
-                decimalPart = decimalPart.slice(0, 10 - integerPart.length - 1); 
-                numStr = `${integerPart}.${decimalPart}`;
-            }
-        currentResult = parseFloat(numStr);
+            roundResult(numStr);
         }
     } 
     
@@ -134,16 +125,7 @@ function handleEquals() {
             let numStr = currentResult.toString();
 
             if (numStr.length > 10) {
-                let integerPart = numStr.split('.')[0]; 
-                let decimalPart = numStr.split('.')[1] || ''; 
-
-                if (integerPart.length >= 10) {
-                    numStr = integerPart.slice(0, 10); 
-                } else {
-                decimalPart = decimalPart.slice(0, 10 - integerPart.length - 1); 
-                numStr = `${integerPart}.${decimalPart}`;
-                }
-                currentResult = parseFloat(numStr);
+                roundResult(numStr); 
             }
             
             updateDisplay(currentResult);
@@ -212,7 +194,55 @@ function toggleSign() {
     }
 }
 
+function roundResult(numStr) {
+    let integerPart = numStr.split('.')[0]; 
+    let decimalPart = numStr.split('.')[1] || ''; 
+
+    if (integerPart.length >= 10) {
+        numStr = integerPart.slice(0, 10); 
+    } else {
+        let maxDecimalLength = 10 - integerPart.length - 1;
+        decimalPart = decimalPart.slice(0, maxDecimalLength); 
+        let roundedDecimal = (parseFloat(`0.${decimalPart}`)).toFixed(maxDecimalLength).split('.')[1];
+        numStr = `${integerPart}.${roundedDecimal}`;
+    }
+    currentResult = parseFloat(numStr);
+
+}
+
 function updateDisplay(value) {
     display.textContent = value;
 }
 
+document.addEventListener("keydown", (event) => {
+    const key = event.key;
+
+    if (!isNaN(key)) {
+        handleNumber(key);
+    } else if (["+", "-", "*", "/"].includes(key)) {
+        handleOperator(key);
+    } else {
+        switch (key) {
+            case "Enter":
+                event.preventDefault();
+                handleEquals();
+                break;
+            case "Escape":
+                clearAll();
+                break;
+            case ".":
+                handleDecimal();
+                break;
+            case "%":
+                handlePercentage();
+                break;
+            case "Backspace":
+                deleteLastDigit();
+                break;
+            case "_": 
+            case "±": 
+                toggleSign();
+                break;
+        }
+    }
+});
