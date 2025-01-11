@@ -42,23 +42,32 @@ document.querySelectorAll("button").forEach(button => {
     button.addEventListener("click", () => {
         const value = button.textContent;
 
-        if (!isNaN(value)) {
-            handleNumber(value);
-        } else if (["+", "-", "*", "/"].includes(value)) {
-            handleOperator(value);
-        } else if (value === "=") {
-            handleEquals();
-        } else if (value === "AC") {
-            clearAll();  
-        } else if (value === ".") {
-            handleDecimal();
-        } else if (value === "%") {
-            handlePercentage();
-        } else if (value === "←") {
-            deleteLastDigit();
-        } else if (value === "+/-") {
-            toggleSign();
-        }
+        switch (true) {
+            case !isNaN(value):
+                handleNumber(value);
+                break;
+            case ["+", "-", "*", "/"].includes(value):
+                handleOperator(value);
+                break;
+            case value === "=":
+                handleEquals();
+                break;
+            case value === "AC":
+                clearAll();
+                break;
+            case value === ".":
+                handleDecimal();
+                break;
+            case value === "%":
+                handlePercentage();
+                break;
+            case value === "←":
+                deleteLastDigit();
+                break;
+            case value === "+/-":
+                toggleSign();
+                break;
+        }                           
     });
 });
 
@@ -206,3 +215,4 @@ function toggleSign() {
 function updateDisplay(value) {
     display.textContent = value;
 }
+
