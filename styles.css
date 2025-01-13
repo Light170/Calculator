@@ -60,23 +60,23 @@ button {
 }
 
 button:hover {
-    background-color: #f0f0f0; 
+    background-color: #ebebeb; 
 }
 
 button:active {
-    background-color: #e0e0e0; 
+    background-color: #dfdfdf; 
 }
 
 .operatorPad {
-    background-color: #c0c0c0;
-}
-
-.operatorPad:hover {
     background-color: #b0b0b0;
 }
 
-.operatorPad:active {
+.operatorPad:hover {
     background-color: #a0a0a0;
+}
+
+.operatorPad:active {
+    background-color: #939393;
 }
 
 
