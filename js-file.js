@@ -27,6 +27,7 @@ function operate(operator, a, b) {
         case "x":
             return multiply(a, b);
         case "/":
+        case "÷":
             return divide(a, b);
         default:
             return null; 
@@ -47,7 +48,7 @@ document.querySelectorAll("button").forEach(button => {
             case !isNaN(value):
                 handleNumber(value);
                 break;
-            case ["+", "-", "x", "/"].includes(value):
+            case ["+", "-", "x", "÷"].includes(value):
                 handleOperator(value);
                 break;
             case value === "=":
