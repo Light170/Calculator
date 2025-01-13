@@ -10,10 +10,11 @@ html {
     flex-wrap: wrap;
     width: 400px;
     height: 500px;
-    border: 5px solid black;
+    border: 5px solid #3a3a3a;
     border-radius: 5px;
     gap: 5px;
     padding: 5px;
+    background-color: #8a8a8a;
 }
 
 button {
@@ -21,10 +22,12 @@ button {
     width: calc(25% - 3px);
     box-sizing: border-box;
     margin: 2px 0;
-    font-size: 25px;
+    font-size: 30px;
     font-weight: 500;
-    
-
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 2px;
+    color: black;
 }
 
 .buttons {
@@ -40,8 +43,22 @@ button {
     padding-right: 10px;
     font-size: 70px;
     font-weight: 500;
-    border: 2px solid black;
+    border: 3px solid #333333;
+    border-radius: 3px;
+    background-color: white;
+    color: black;
+}
 
+.operatorPad {
+    background-color: #bebebe;
+}
+
+button:hover {
+    background-color: #f0f0f0; 
+}
+
+button:active {
+    background-color: #e0e0e0; 
 }
 
 

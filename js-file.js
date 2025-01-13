@@ -101,11 +101,9 @@ function handleOperator(op) {
         currentResult = parseFloat(currentInput);
     } else {
         currentResult = operate(operator, currentResult, parseFloat(currentInput));
-        
-        let numStr = currentResult.toString();
 
-        if (numStr.length > 10) {
-            roundResult(numStr);
+        if (currentResult.toString().length > 10) {
+            currentResult = roundResult(currentResult);
         }
     } 
     
@@ -122,12 +120,9 @@ function handleEquals() {
         if (currentResult) {
             currentResult = operate(operator, currentResult, parseFloat(currentInput));
             
-            let numStr = currentResult.toString();
-
-            if (numStr.length > 10) {
-                roundResult(numStr); 
+            if (currentResult.toString().length > 10) {
+                currentResult = roundResult(currentResult); 
             }
-            
             updateDisplay(currentResult);
             operator = null;  
             currentInput = ""; 
@@ -147,7 +142,7 @@ function handleDecimal() {
             currentResult = null;
         }
         currentInput = "0.";
-    } else if (!currentInput.includes(".") && currentInput <= 9) {
+    } else if (!currentInput.includes(".") && currentInput.length <= 8) {
         currentInput += ".";
     }
 
@@ -194,7 +189,8 @@ function toggleSign() {
     }
 }
 
-function roundResult(numStr) {
+function roundResult(num) {
+    numStr = num.toString();
     let integerPart = numStr.split('.')[0]; 
     let decimalPart = numStr.split('.')[1] || ''; 
 
@@ -203,11 +199,9 @@ function roundResult(numStr) {
     } else {
         let maxDecimalLength = 10 - integerPart.length - 1;
         decimalPart = decimalPart.slice(0, maxDecimalLength); 
-        let roundedDecimal = (parseFloat(`0.${decimalPart}`)).toFixed(maxDecimalLength).split('.')[1];
-        numStr = `${integerPart}.${roundedDecimal}`;
+        numStr = `${integerPart}.${decimalPart}`;
     }
-    currentResult = parseFloat(numStr);
-
+    return parseFloat(numStr);
 }
 
 function updateDisplay(value) {
