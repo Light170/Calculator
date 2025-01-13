@@ -3,36 +3,45 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(250, 255, 255);
+    background-color: rgb(245, 245, 245);
+    font-family: 'Lato', sans-serif;
 }
 
 .calculator {
     display: flex;
     flex-wrap: wrap;
-    width: 400px;
-    height: 500px;
-    border: 5px solid #3a3a3a;
+    justify-content: center;
+    width: 420px;
+    height: 520px;
+    border: 5px solid black;
     border-radius: 5px;
-    gap: 5px;
     padding: 5px;
-    background-color: #8a8a8a;
+    gap: 2px;
+    background-color: #808080;
 }
 
 button {
-    height: calc(20% - 3px);
-    width: calc(25% - 3px);
+    height: calc(20% - 2px);
+    width: calc(25% - 4px);
     box-sizing: border-box;
-    margin: 2px 0;
     font-size: 35px;
     font-weight: 500;
     background-color: white;
     border: 1px solid black;
     border-radius: 2px;
-    color: black;
+    font-family: 'Lato', sans-serif;
+    margin: 1px;
+    
 }
 
 .buttons {
-    height: calc(100% - 105px);
+    height: calc(100% - 130px);
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    padding: 2px;
+    padding-left: 4px;   
 }
 
 #display {
@@ -41,13 +50,13 @@ button {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    margin: 5px;
     padding-right: 10px;
     font-size: 70px;
     font-weight: 500;
-    border: 3px solid #333333;
+    border: 3px solid black;
     border-radius: 3px;
     background-color: white;
-    color: black;
 }
 
 button:hover {
