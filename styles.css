@@ -3,7 +3,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background:   radial-gradient(circle, rgb(245, 255, 255), rgb(225, 255, 255));
+    background:   radial-gradient(circle, rgb(245, 255, 255), rgb(235, 255, 255));
     font-family: 'Lato', sans-serif;
 }
 
