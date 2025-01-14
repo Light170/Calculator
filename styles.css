@@ -3,7 +3,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(245, 255, 255);
+    background:   radial-gradient(circle, rgb(245, 255, 255), rgb(225, 255, 255));
     font-family: 'Lato', sans-serif;
 }
 
@@ -28,7 +28,7 @@ button {
     font-weight: 500;
     background-color: white;
     border: 1px solid black;
-    border-radius: 2px;
+    border-radius: 3px;
     font-family: 'Lato', sans-serif;
     margin: 1px;
     
@@ -48,7 +48,7 @@ button {
     width: 100%;
     height: 90px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-end;  
     align-items: center;
     margin: 5px;
     padding-right: 10px;
