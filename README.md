@@ -9,6 +9,7 @@ This final project of The Odin Project's Foundations course curriculum introduce
 - Percentage calculation
 - Backspace button
 - Clear button
+- Keyboard support
 
 ### Technologies Used
 This calculator was built using:
