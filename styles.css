@@ -3,35 +3,8 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgb(245, 255, 255);
+    background: #333333;
     font-family: 'Lato', sans-serif;
-}
-
-.calculator {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 420px;
-    height: 520px;
-    border: 5px solid black;
-    border-radius: 5px;
-    padding: 5px;
-    gap: 2px;
-    background-color: #808080;
-}
-
-button {
-    height: calc(20% - 2px);
-    width: calc(25% - 4px);
-    box-sizing: border-box;
-    font-size: 35px;
-    font-weight: 500;
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 3px;
-    font-family: 'Lato', sans-serif;
-    margin: 1px;
-    
 }
 
 .buttons {
@@ -51,33 +24,66 @@ button {
     justify-content: flex-end;  
     align-items: center;
     margin: 5px;
-    padding-right: 10px;
+    padding: 0 10px;
     font-size: 70px;
     font-weight: 500;
-    border: 3px solid black;
+    border: 3px solid #2B4B84;
     border-radius: 3px;
-    background-color: rgb(245, 255, 255);
-    box-shadow: 0 0 20px rgba(173, 216, 230, 0.6), 0 0 10px rgba(173, 216, 230, 0.4);
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0 0 20px rgba(22, 59, 129, 0.6), 0 0 10px rgba(22, 59, 129, 0.4);
+    color: #F4C300;
+}
+
+.calculator {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 420px;
+    height: 520px;
+    border: 5px solid #000000;
+    border-radius: 5px;
+    padding: 5px;
+    gap: 2px;
+    background-color: #1e1e1e;
+}
+
+button {
+    height: calc(20% - 2px);
+    width: calc(25% - 4px);
+    box-sizing: border-box;
+    font-size: 35px;
+    font-weight: 500;
+    background-color: #414141;
+    border: 1px solid black;
+    border-radius: 3px;
+    font-family: 'Lato', sans-serif;
+    margin: 1px;
+    color: #F4C300;
+    transition: background-color 0.2s ease;
+    
 }
 
 button:hover {
-    background-color: #dbdbdb; 
+    background-color: #3a3a3a; 
+    transform: scale(1.02);
 }
 
 button:active {
-    background-color: #cbcbcb; 
+    background-color: #606060; 
+    transform: scale(0.98);
 }
 
 .operatorPad {
-    background-color: #add8e6;
+    background-color: #2B4B84;
+    color: black;
 }
 
 .operatorPad:hover {
-    background-color: #9dc8e6;
+    background-color: #7caee6;
 }
 
 .operatorPad:active {
-    background-color: #8db8e6;
+    background-color: #6a9cd6;
 }
 
 

@@ -1,3 +1,5 @@
+const MAX_DIGITS = 9;
+
 function add(a, b) {
     return a + b;
 }
@@ -80,10 +82,12 @@ function handleNumber(value) {
         }
     }
     
-    const MAX_DIGITS = 10;
-    
     if (currentInput === "0") {
     currentInput = value;
+    } else if (currentInput.includes(".")) {
+        if (currentInput.length < MAX_DIGITS + 1) {
+        currentInput += value;
+        }
     } else if (currentInput.length < MAX_DIGITS) {
         currentInput += value;
     }
@@ -104,7 +108,7 @@ function handleOperator(op) {
     } else {
         currentResult = operate(operator, currentResult, parseFloat(currentInput));
 
-        if (currentResult.toString().length > 10) {
+        if (currentResult.toString().length > MAX_DIGITS) {
             currentResult = roundResult(currentResult);
         }
     } 
@@ -122,7 +126,7 @@ function handleEquals() {
         if (currentResult) {
             currentResult = operate(operator, currentResult, parseFloat(currentInput));
             
-            if (currentResult.toString().length > 10) {
+            if (currentResult.toString().length > MAX_DIGITS) {
                 currentResult = roundResult(currentResult); 
             }
             updateDisplay(currentResult);
@@ -144,7 +148,7 @@ function handleDecimal() {
             currentResult = null;
         }
         currentInput = "0.";
-    } else if (!currentInput.includes(".") && currentInput.length <= 8) {
+    } else if (!currentInput.includes(".") && currentInput.length <= MAX_DIGITS - 1) {
         currentInput += ".";
     }
 
@@ -196,10 +200,10 @@ function roundResult(num) {
     let integerPart = numStr.split('.')[0]; 
     let decimalPart = numStr.split('.')[1] || ''; 
 
-    if (integerPart.length >= 10) {
-        numStr = integerPart.slice(0, 10); 
+    if (integerPart.length >= MAX_DIGITS) {
+        numStr = integerPart.slice(0, MAX_DIGITS); 
     } else {
-        let maxDecimalLength = 10 - integerPart.length - 1;
+        let maxDecimalLength = MAX_DIGITS - integerPart.length - 1;
         decimalPart = decimalPart.slice(0, maxDecimalLength); 
         numStr = `${integerPart}.${decimalPart}`;
     }
