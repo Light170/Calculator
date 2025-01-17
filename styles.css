@@ -29,7 +29,7 @@ html {
     font-weight: 500;
     border: 3px solid #2B4B84;
     border-radius: 3px;
-    background-color: rgb(0, 0, 0);
+    background: black;
     box-shadow: 0 0 20px rgba(22, 59, 129, 0.6), 0 0 10px rgba(22, 59, 129, 0.4);
     color: #F4C300;
 }
@@ -64,12 +64,12 @@ button {
 }
 
 button:hover {
-    background-color: #3a3a3a; 
+    background-color: #313131; 
     transform: scale(1.02);
 }
 
 button:active {
-    background-color: #606060; 
+    background-color: #212121; 
     transform: scale(0.98);
 }
 
@@ -79,11 +79,11 @@ button:active {
 }
 
 .operatorPad:hover {
-    background-color: #7caee6;
+    background-color: #1e3a65;;
 }
 
 .operatorPad:active {
-    background-color: #6a9cd6;
+    background-color:  #16304f;
 }
 
 
