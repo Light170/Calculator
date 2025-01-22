@@ -3,7 +3,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #333333;
+    background: #202020;
     font-family: 'Lato', sans-serif;
 }
 
@@ -44,7 +44,7 @@ html {
     border-radius: 5px;
     padding: 5px;
     gap: 2px;
-    background-color: #1e1e1e;
+    background-color: #101010;
 }
 
 button {
@@ -75,6 +75,7 @@ button:active {
 .operatorPad {
     background-color: #2B4B84;
     color: black;
+    font-size: 35px;
 }
 
 .operatorPad:hover {
