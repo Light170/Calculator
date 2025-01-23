@@ -79,11 +79,11 @@ button:active {
 }
 
 .operatorPad:hover {
-    background-color: #1e3a65;;
+    background-color: #0d2347;;
 }
 
 .operatorPad:active {
-    background-color:  #16304f;
+    background-color: #0a1b3a;
 }
 
 
