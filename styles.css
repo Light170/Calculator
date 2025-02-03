@@ -3,7 +3,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #202020;
+    background: #181818;
     font-family: 'Lato', sans-serif;
 }
 
@@ -30,7 +30,7 @@ html {
     border: 3px solid #112d5e;
     border-radius: 3px;
     background: black;
-    box-shadow: 0 0 15px rgba(17, 45, 94, 0.6), 0 0 8px rgba(17, 45, 94, 0.4);
+    box-shadow: 0 0 15px rgba(17, 45, 94, 0.5), 0 0 8px rgba(17, 45, 94, 0.4);
     color: #ebcc1c;
 }
 
@@ -44,7 +44,7 @@ html {
     border-radius: 5px;
     padding: 5px;
     gap: 2px;
-    background-color: #101010;
+    background-color: #080808;
 }
 
 button {
