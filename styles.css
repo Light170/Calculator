@@ -53,7 +53,7 @@ button {
     box-sizing: border-box;
     font-size: 35px;
     font-weight: 500;
-    background-color: rgb(81, 82, 84);
+    background-color: rgb(75, 80, 85);
     border: 1px solid black;
     border-radius: 3px;
     font-family: 'Lato', sans-serif;
@@ -64,26 +64,26 @@ button {
 }
 
 button:hover {
-    background-color: rgb(66, 67, 69); 
+    background-color: rgb(65, 70, 75); 
 }
 
 button:active {
-    background-color: rgb(51, 52, 54); 
+    background-color: rgb(55, 60, 65); 
     transform: scale(0.98);
 }
 
 .operatorPad {
-    background-color: #112d5e;
+    background-color: rgb(17, 45, 94);
     color: #ebcc1c;
     font-size: 35px;
 }
 
 .operatorPad:hover {
-    background-color: #0d2347;
+    background-color: rgb(13, 35, 84);
 }
 
 .operatorPad:active {
-    background-color: #0a1b3a;
+    background-color: rgb(9, 25, 54);
 }
 
 
