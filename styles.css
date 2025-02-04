@@ -68,7 +68,7 @@ button:hover {
 }
 
 button:active {
-    background-color: rgb(55, 60, 65); 
+    background-color: rgb(45, 50, 55); 
     transform: scale(0.98);
 }
 
@@ -79,11 +79,11 @@ button:active {
 }
 
 .operatorPad:hover {
-    background-color: rgb(13, 35, 84);
+    background-color: rgb(12, 35, 84);
 }
 
 .operatorPad:active {
-    background-color: rgb(9, 25, 54);
+    background-color: rgb(8, 20, 69);
 }
 
 
