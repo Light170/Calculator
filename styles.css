@@ -3,7 +3,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #181818;
+    background: rgb(24, 24, 24);
     font-family: 'Lato', sans-serif;
 }
 
@@ -27,10 +27,10 @@ html {
     padding: 0 10px;
     font-size: 70px;
     font-weight: 500;
-    border: 3px solid #112d5e;
+    border: 3px solid rgb(12, 20, 54);
     border-radius: 3px;
     background: black;
-    box-shadow: 0 0 15px rgba(17, 45, 94, 0.5), 0 0 8px rgba(17, 45, 94, 0.4);
+    box-shadow: 0 0 15px rgba(12, 35, 74, 0.5), 0 0 8px rgba(12, 35, 74, 0.4);
     color: #ebcc1c;
 }
 
@@ -40,11 +40,11 @@ html {
     justify-content: center;
     width: 420px;
     height: 520px;
-    border: 5px solid #000000;
+    border: 6px solid rgb(16, 16, 16);
     border-radius: 5px;
     padding: 5px;
     gap: 2px;
-    background-color: #080808;
+    background-color: rgb(8, 8, 8);
 }
 
 button {
