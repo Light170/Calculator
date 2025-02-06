@@ -30,7 +30,7 @@ html {
     border: 3px solid rgb(12, 20, 54);
     border-radius: 3px;
     background: black;
-    box-shadow: 0 0 15px rgba(12, 35, 74, 0.5), 0 0 8px rgba(12, 35, 74, 0.4);
+    box-shadow: 0 0 15px rgba(12, 20, 54, 0.5), 0 0 8px rgba(12, 20, 54, 0.4);
     color: #ebcc1c;
 }
 
