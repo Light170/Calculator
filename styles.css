@@ -53,7 +53,7 @@ button {
     box-sizing: border-box;
     font-size: 35px;
     font-weight: 500;
-    background-color: rgb(80, 85, 90);
+    background-color: rgb(80, 90, 100);
     border: 1px solid black;
     border-radius: 3px;
     font-family: 'Lato', sans-serif;
@@ -64,11 +64,11 @@ button {
 }
 
 button:hover {
-    background-color: rgb(70, 75, 80); 
+    background-color: rgb(70, 80, 90); 
 }
 
 button:active {
-    background-color: rgb(50, 55, 60); 
+    background-color: rgb(50, 60, 70); 
     transform: scale(0.98);
 }
 
